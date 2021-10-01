@@ -8,16 +8,12 @@ services:
     restart: on-failure
     networks:
       - bjc-net
-    #volumes:
-      #- ./rabbitmq/etc/definitions.json:/etc/rabbitmq/definitions.json
-      # - ./rabbitmq/data:/var/lib/rabbitmq/    # use docker volume in case of permission error
-      #- rabbitmq_data:/var/lib/rabbitmq/
     ports:
       - 8161:8161
       - 61616:61616
     environment:
-      ACTIVEMQ_ADMIN_LOGIN: admin
-      ACTIVEMQ_ADMIN_PASSWORD: admin
+      #ACTIVEMQ_ADMIN_LOGIN: admin
+      #ACTIVEMQ_ADMIN_PASSWORD: admin
       ACTIVEMQ_MIN_MEMORY: 512
       ACTIVEMQ_MAX_MEMORY: 2048
 
@@ -51,5 +47,3 @@ services:
 networks:
   bjc-net:
     driver: bridge
-#volumes:
-  #activemq_data:
